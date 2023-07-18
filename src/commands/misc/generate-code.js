@@ -5,8 +5,8 @@ const Redeem = require('../../models/add_schema');
 module.exports = {
     name: 'generate_code',
     description: 'Use this command to generate a redeem code',
-    //devOnly: Boolean,
-    //testOnly: Boolean,
+    devOnly: false,
+    testOnly: false,
     //options: Object[],
     //deleted: Boolean,
     options: [

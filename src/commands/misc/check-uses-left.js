@@ -33,15 +33,27 @@ module.exports = {
                 const timesToRedeem = search.timesToRedeem;
                 const pluralSuffix = timesToRedeem === 1 ? '' : 's';
 
-                interaction.editReply(`🔄️ El Código De Canje Introducido Tiene ${timesToRedeem} Uso${pluralSuffix} Restante${pluralSuffix}`);
-                console.log(`🎫 El Código De Canje Introducido Tiene ${timesToRedeem} Uso${pluralSuffix} Restante${pluralSuffix}`);
+                interaction.editReply(
+                    `🔄️ ES: El código de canje introducido tiene ${timesToRedeem} uso${pluralSuffix} restante${pluralSuffix}\n` +
+                    `EN: The entered redemption code has ${timesToRedeem} remaining use${pluralSuffix}`
+                );
+
+                console.log(`🎫 ES: El código de canje introducido tiene ${timesToRedeem} uso${pluralSuffix} restante${pluralSuffix}`);
+                console.log(`🎫 EN: The entered redemption code has ${timesToRedeem} remaining use${pluralSuffix}`);
+
             } else {
-                interaction.editReply('❌ El Código De Canje Introducido No Es Válido');
-                console.log('🎫 El Código De Canje Introducido No Es Válido');
+                interaction.editReply(
+                    '❌ ES: El código de canje introducido no es válido\n' +
+                    '❌ EN: The entered redemption code is not valid'
+                );
+
+                console.log('🎫 ES: El código de canje introducido no es válido');
+                console.log('🎫 EN: The entered redemption code is not valid');
             }
 
         } catch (error) {
-            console.log(`⚠️ Hubo un error: ${error} ⚠️`);
+            console.log(`⚠️ ES: Hubo un error: ${error} ⚠️`);
+            console.log(`⚠️ EN: There was an error: ${error} ⚠️`);
         }
     }
 };

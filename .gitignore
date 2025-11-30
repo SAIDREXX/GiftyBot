@@ -1,6 +1,5 @@
 .env.*
 
-node_modules/
-.git
+node_modules
 .vscode
 .github

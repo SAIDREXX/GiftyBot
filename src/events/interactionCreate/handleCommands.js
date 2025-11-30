@@ -14,7 +14,7 @@ module.exports = async (client, interaction) => {
         if (commandObject.devOnly) {
             if (!devs.includes(interaction.member.id)) {
                 interaction.reply({
-                    content: 'Solo Desarrolladores Pueden Ejecutar Este Comando',
+                    content: 'ES: Solo Desarrolladores Pueden Ejecutar Este Comando EN: Only developers can run this command',
                     ephemeral: true,
                 });
                 return;
@@ -24,7 +24,7 @@ module.exports = async (client, interaction) => {
         if (commandObject.testOnly) {
             if(!(interaction.guild.id === testServer)) {
                 interaction.reply({
-                    content: 'Este Comando No Puede Ejecutarse Aquí',
+                    content: 'ES: Este Comando No Puede Ejecutarse Aquí EN: This command cannot be executed here',
                     ephemeral: true,
                 });
                 return;
@@ -35,7 +35,7 @@ module.exports = async (client, interaction) => {
             for (const permission of commandObject.permissionsRequired) {
                 if (!interaction.member.permissions.has(permission)) {
                     interaction.reply({
-                        content: 'No Tienes Los Permisos Necesarios Para Ejecutar Este Comando',
+                        content: 'ES: No Tienes Los Permisos Necesarios Para Ejecutar Este Comando EN: You do not have the necessary permissions to execute this command',
                         ephemeral: true,
                     });
                     return;
@@ -49,7 +49,7 @@ module.exports = async (client, interaction) => {
 
                 if (!bot.permissions.has(permissions)) {
                     interaction.reply({
-                        content: 'No Tengo Los Permisos Necesarios Para Ejecutar Este Comando',
+                        content: 'ES: No Tengo Los Permisos Necesarios Para Ejecutar Este Comando EN: I do not have the necessary permissions to execute this command',
                         ephemeral: true,
                     });
                     return;
@@ -59,6 +59,7 @@ module.exports = async (client, interaction) => {
         await commandObject.callback(client, interaction)
     } catch (error) {
         console.log(`Hubo Un Error Al Ejectutar Este Comando ${error}`);
+        console.log(`There was an error executing this command ${error}`);
     }
 
 }; 

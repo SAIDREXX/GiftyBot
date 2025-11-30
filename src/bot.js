@@ -18,11 +18,13 @@ client.on('ready', (c) => {
     try {
         await mongoose.connect(process.env.MONGODB_URI);
         console.log(`📊Conectado a MongoDB📊`);
+        console.log(`📊Connected to MongoDB 📊`);
         eventHandler(client);
         client.login(process.env.TOKEN); 
         
     } catch (error) {
         console.log(`⚠️ Hubo un error : ${error}⚠️`);
+        console.log(`⚠️ There was an error: ${error}⚠️`);
     }
 })();
 
